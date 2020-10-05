@@ -37,4 +37,19 @@ public class Dragon : MonoBehaviour
         Debug.Log(currentState);
         return this.currentState;
     }
+
+    public void Skiil_1_Start()
+    {
+        Instantiate(dragonInfo.skillPrefab[0], new Vector3(dragonInfo.firePos[0].transform.position.x, 0, dragonInfo.firePos[0].transform.position.z), dragonInfo.firePos[0].transform.rotation);
+    }
+
+    public void Skiil_1_End()
+    {
+        Instantiate(dragonInfo.skillPrefab[1], new Vector3(dragonInfo.firePos[0].transform.position.x, 0, dragonInfo.firePos[0].transform.position.z), dragonInfo.firePos[0].transform.rotation);
+    }
+
+    public void Skiil_3()
+    {
+        Instantiate(dragonInfo.skillPrefab[2], dragonInfo.firePos[1].transform.position, dragonInfo.firePos[1].transform.rotation);
+    }
 }

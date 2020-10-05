@@ -9,6 +9,9 @@ public class DragonAttackState : DragonState
     public Transform target;
     public Vector3 direction;
 
+    private float coolTime;
+    private float currentTime;
+
     private Animator animator;
 
     void DragonState.OnEnter(Dragon dragon)
@@ -16,24 +19,31 @@ public class DragonAttackState : DragonState
         Debug.Log("Attack State");
         this.dragon = dragon;
         animator = dragon.GetComponent<Animator>();
+
+        coolTime = 6.367f;
+        currentTime = 0.0f;
+
+        animator.SetBool("isAttack", true);
+        animator.SetBool("isSkill_1", true);
     }
 
     void DragonState.Update()
     {
-        animator.SetBool("isAttack", true);
+        target = GameObject.Find("Player").transform;
+        direction = (target.position - dragon.transform.position).normalized;
 
-        if(dragon.dragonInfo.attackCount >= 3)
+        float distance = Vector3.Distance(target.position, dragon.transform.position);
+
+        if (coolTime < currentTime)
         {
-            dragon.SetState(new DragonSkill_2State());
+            dragon.SetState(new DragonIdleState());
         }
-        else
-        {          
-            dragon.SetState(new DragonSkill_1State());
-        }
+        currentTime += Time.deltaTime;
     }
 
     void DragonState.OnExit()
     {
-        animator.SetBool("isAttack", false); 
+        animator.SetBool("isAttack", false);
+        animator.SetBool("isSkill_1", false);
     }
 }

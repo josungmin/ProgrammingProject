@@ -10,10 +10,14 @@ public class DragonIdleState : DragonState
     private Transform target;
     private Vector3 direction;
 
+    private int randNum;
+
     void DragonState.OnEnter(Dragon dragon)
     {
         this.dragon = dragon;
         animator = dragon.GetComponent<Animator>();
+
+        randNum = Random.Range(0, 3);
     }
 
     void DragonState.Update()
@@ -31,7 +35,14 @@ public class DragonIdleState : DragonState
         }
         else if(dragon.dragonInfo.Attack_Range >= distance)
         {
-            dragon.SetState(new DragonAttackState());
+            if (randNum == 0)
+                dragon.SetState(new DragonAttackState());
+            else if (randNum == 1)
+                dragon.SetState(new DragonSkill_2State());
+            else if(randNum == 2)
+                dragon.SetState(new DragonSkill_3State());
+            else
+                dragon.SetState(new DragonSkill_2State());
         }
     }
 

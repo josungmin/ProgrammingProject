@@ -10,8 +10,8 @@ public class DragonInfo : MonoBehaviour
 
     public int attackCount = 0;
 
-    public GameObject firePos;
-    public GameObject skillPrefab;
+    public GameObject[] firePos;
+    public GameObject[] skillPrefab;
 
     public float velocity = 0.3f;     // 이동 속도
 

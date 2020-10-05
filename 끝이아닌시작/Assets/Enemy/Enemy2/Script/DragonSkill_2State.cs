@@ -9,6 +9,9 @@ public class DragonSkill_2State : DragonState
     public Transform target;
     public Vector3 direction;
 
+    private float coolTime;
+    private float currentTime;
+
     private Animator animator;
 
     void DragonState.OnEnter(Dragon dragon)
@@ -16,18 +19,25 @@ public class DragonSkill_2State : DragonState
         this.dragon = dragon;
         animator = dragon.GetComponent<Animator>();
 
-        dragon.dragonInfo.attackCount = 0;
+        coolTime = 1.0f;
+        currentTime = 0.0f;
+
+        animator.SetBool("isAttack", true);
+        animator.SetBool("isSkill_2", true);
     }
 
     void DragonState.Update()
     {
-        animator.SetBool("isSkill_2", true);
-
-        //dragon.SetState(new DragonIdleState());
+        if (coolTime < currentTime)
+        {
+            dragon.SetState(new DragonIdleState());
+        }
+        currentTime += Time.deltaTime;
     }
 
     void DragonState.OnExit()
     {
-        animator.SetBool("isSkill_2", false); 
+        animator.SetBool("isSkill_2", false);
+        animator.SetBool("isAttack", false);
     }
 }

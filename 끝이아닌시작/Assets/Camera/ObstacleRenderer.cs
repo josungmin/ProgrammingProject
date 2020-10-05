@@ -34,7 +34,6 @@ public class ObstacleRenderer : MonoBehaviour
                 matColor.a = 0.5f;
                 Mat.color = matColor;
             }
-
         }
     }
 }

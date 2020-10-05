@@ -72,8 +72,8 @@
      <Compile Include="Assets\Enemy\Enemy2\Script\DragonIdleState.cs" />
      <Compile Include="Assets\Enemy\Enemy2\Script\DragonInfo.cs" />
      <Compile Include="Assets\Enemy\Enemy2\Script\DragonMoveState.cs" />
-     <Compile Include="Assets\Enemy\Enemy2\Script\DragonSkill_1State.cs" />
      <Compile Include="Assets\Enemy\Enemy2\Script\DragonSkill_2State.cs" />
+     <Compile Include="Assets\Enemy\Enemy2\Script\DragonSkill_3State.cs" />
      <Compile Include="Assets\Enemy\Enemy2\Script\DragonState.cs" />
      <Compile Include="Assets\Player\Script\CoolTime.cs" />
      <Compile Include="Assets\Player\Script\PlayerAnimation.cs" />

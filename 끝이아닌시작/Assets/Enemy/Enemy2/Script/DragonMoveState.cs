@@ -14,6 +14,8 @@ public class DragonMoveState : DragonState
 
     private float distance;
 
+    private int randNum;
+
     void DragonState.OnEnter(Dragon dragon)
     {
         Debug.Log("Move State");
@@ -21,6 +23,8 @@ public class DragonMoveState : DragonState
 
         animator = dragon.GetComponent<Animator>();
         agent = dragon.GetComponent<NavMeshAgent>();
+
+        randNum = Random.Range(0, 2);
     }
 
     void DragonState.Update()
@@ -39,7 +43,14 @@ public class DragonMoveState : DragonState
         }
         else if (dragon.dragonInfo.Attack_Range >= distance)
         {
-            dragon.SetState(new DragonAttackState());
+            if (randNum == 0)
+                dragon.SetState(new DragonAttackState());
+            else if (randNum == 1)
+                dragon.SetState(new DragonSkill_2State());
+            else if (randNum == 2)
+                dragon.SetState(new DragonSkill_3State());
+            else
+                dragon.SetState(new DragonSkill_2State());
         }
     }
 
