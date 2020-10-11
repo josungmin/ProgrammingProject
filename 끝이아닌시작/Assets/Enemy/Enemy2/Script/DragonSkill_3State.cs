@@ -39,5 +39,6 @@ public class DragonSkill_3State : DragonState
     {
         animator.SetBool("isSkill_3", false);
         animator.SetBool("isAttack", false);
+        dragon.dragonInfo.attackNum = 0;
     }
 }

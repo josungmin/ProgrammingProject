@@ -25,6 +25,7 @@ public class DragonMoveState : DragonState
         agent = dragon.GetComponent<NavMeshAgent>();
 
         randNum = Random.Range(0, 2);
+        dragon.dragonInfo.attackNum++;
     }
 
     void DragonState.Update()
@@ -43,11 +44,11 @@ public class DragonMoveState : DragonState
         }
         else if (dragon.dragonInfo.Attack_Range >= distance)
         {
-            if (randNum == 0)
+            if (dragon.dragonInfo.attackNum == 0)
                 dragon.SetState(new DragonAttackState());
-            else if (randNum == 1)
+            else if (dragon.dragonInfo.attackNum == 1)
                 dragon.SetState(new DragonSkill_2State());
-            else if (randNum == 2)
+            else if (dragon.dragonInfo.attackNum == 2)
                 dragon.SetState(new DragonSkill_3State());
             else
                 dragon.SetState(new DragonSkill_2State());
