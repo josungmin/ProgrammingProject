@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class DragonInfo : MonoBehaviour
 {
-    [SerializeField]
     public SliderBar Hp;
     [SerializeField]
     private float initHp;

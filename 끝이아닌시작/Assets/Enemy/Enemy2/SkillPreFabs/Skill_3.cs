@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Skill_3 : MonoBehaviour
 {
-    public bool isAttack = true;
+    public bool isAttacked = true;
 
     void OnParticleCollision(GameObject other)
     {
-        if (other.CompareTag("Player") && isAttack == true)
+        if (other.CompareTag("Player") && isAttacked == true)
         {
             Debug.Log("Damaged");
-            isAttack = false;
+            isAttacked = false;
             other.gameObject.GetComponent<PlayerInfo>().Hp.currentValue -= 10;
         }
     }

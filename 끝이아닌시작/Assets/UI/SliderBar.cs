@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// 프로그래스바 
 public class SliderBar : MonoBehaviour
 {
     private Slider bar;
     [SerializeField]
     private Text text;
     public float maxValue { get; set; }
-    public float currentValue { get; set; }
+    public float currentValue;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class SliderBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // 상태 전환
         if (bar.value != currentValue)
         {
             bar.value = currentValue / maxValue;
@@ -27,6 +29,7 @@ public class SliderBar : MonoBehaviour
         }          
     }
 
+    // 초기화
     public void Init(float MaxValue, float CurrentValue)
     {
         maxValue = MaxValue;
