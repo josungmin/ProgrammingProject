@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class Npc : MonoBehaviour
 {
+    [SerializeField]
+    private Quest quest;
+
+    public QuestManager questManager;
     public GameObject player;
     public GameObject questPanel;
 
@@ -12,19 +16,16 @@ public class Npc : MonoBehaviour
     private float enableDistance = 3.0f;
     private bool isEnable = false;
 
-    // 퀘스트 내용
-    private string questContent = "드래곤족 몬스터\n10마리를 사냥 하라\n\n목표 : 드레곤족 몬스터 처치\n0 / 10";
-
-    // 보상 내용
-    private string reward = "보상 : 200 골드";
-
-    // 퀘스트 수락
-    public bool isAccept = false;
+    // 옵저버
+    SbjAchievement h = new SbjAchievement();
 
     // Start is called before the first frame update
     void Start()
     {
-      
+        quest.questAccept = false;
+        quest.questClear = false;
+
+        h.Attach(new ObsEnemyKill(h));
     }
 
     // Update is called once per frame
@@ -35,6 +36,17 @@ public class Npc : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G) && isEnable)
         {
             Enter();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            h.enemyKill++;
+            h.Notify();
+        }
+
+        if (h.enemyKill >= 10)
+        {
+            quest.questClear = true;
         }
     }
 
@@ -55,9 +67,9 @@ public class Npc : MonoBehaviour
     private void Enter()
     {
         // 퀘스트 내용 설정
-        questPanel.transform.FindChild("QuestContent").GetComponent<Text>().text = questContent;
+        questPanel.transform.FindChild("QuestContent").GetComponent<Text>().text = quest.questContent;
         // 보상 설정
-        questPanel.transform.FindChild("RewardText").GetComponent<Text>().text = reward;
+        questPanel.transform.FindChild("RewardText").GetComponent<Text>().text = quest.questReward;
 
         questPanel.SetActive(true);
 
@@ -72,8 +84,9 @@ public class Npc : MonoBehaviour
 
     public void Exit()
     {
-        if(isAccept)
+        if(quest.questAccept)
         {
+            questManager.addList(quest);
             questPanel.SetActive(false);
         }
         else

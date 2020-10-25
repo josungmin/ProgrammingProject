@@ -56,7 +56,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\NPC\Rin New 3d - Anime Style\Advance Unlit Shader\Editor\AdvanceUnlitCustomGUI.cs" />
-     <Compile Include="Assets\NPC\Script\DialogTool\Editor\DialogToolEditor.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
