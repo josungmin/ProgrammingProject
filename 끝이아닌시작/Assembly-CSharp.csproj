@@ -55,17 +55,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\52SpecialEffectPack\Animation&amp;Script\csAnimationSpin.cs" />
+     <Compile Include="Assets\52SpecialEffectPack\Animation&amp;Script\csDestroyEffect.cs" />
+     <Compile Include="Assets\52SpecialEffectPack\Animation&amp;Script\csMouseOrbit.cs" />
+     <Compile Include="Assets\52SpecialEffectPack\Animation&amp;Script\csParticleMove.cs" />
+     <Compile Include="Assets\52SpecialEffectPack\Animation&amp;Script\csShowAllEffect.cs" />
+     <Compile Include="Assets\52SpecialEffectPack\EffectEditor\ShurikenEffectEditor\csShurikenEffectChanger.cs" />
+     <Compile Include="Assets\52SpecialEffectPack\EffectEditor\ShurikenEffectEditor\csShurikenEffectEditor.cs" />
      <Compile Include="Assets\Camera\MainCamera.cs" />
      <Compile Include="Assets\Camera\ObstacleRenderer.cs" />
      <Compile Include="Assets\Effect\Fantastic cartoon VFX\Demo scenes\CameraHolder.cs" />
-     <Compile Include="Assets\Enemy\Enemy1\Script\Enemy.cs" />
-     <Compile Include="Assets\Enemy\Enemy1\Script\EnemyInfo.cs" />
-     <Compile Include="Assets\Enemy\Enemy1\Script\IdleState.cs" />
-     <Compile Include="Assets\Enemy\Enemy1\Script\MoveState.cs" />
-     <Compile Include="Assets\Enemy\Enemy1\Script\Skill_1State.cs" />
-     <Compile Include="Assets\Enemy\Enemy1\Script\Skill_2State.cs" />
-     <Compile Include="Assets\Enemy\Enemy1\Script\State.cs" />
-     <Compile Include="Assets\Enemy\Enemy1\SkillPrefabs\EnemySkill_1.cs" />
      <Compile Include="Assets\Enemy\Enemy2\DragonFireBall.cs" />
      <Compile Include="Assets\Enemy\Enemy2\Script\Dragon.cs" />
      <Compile Include="Assets\Enemy\Enemy2\Script\DragonAttackState.cs" />
@@ -77,6 +76,13 @@
      <Compile Include="Assets\Enemy\Enemy2\Script\DragonState.cs" />
      <Compile Include="Assets\Enemy\Enemy2\SkillPreFabs\Skill_1_Start.cs" />
      <Compile Include="Assets\Enemy\Enemy2\SkillPreFabs\Skill_3.cs" />
+     <Compile Include="Assets\Enemy\NormalEnemy\Script\AttackState.cs" />
+     <Compile Include="Assets\Enemy\NormalEnemy\Script\DeadState.cs" />
+     <Compile Include="Assets\Enemy\NormalEnemy\Script\Enemy.cs" />
+     <Compile Include="Assets\Enemy\NormalEnemy\Script\EnemyInfo.cs" />
+     <Compile Include="Assets\Enemy\NormalEnemy\Script\IdleState.cs" />
+     <Compile Include="Assets\Enemy\NormalEnemy\Script\MoveState.cs" />
+     <Compile Include="Assets\Enemy\NormalEnemy\Script\State.cs" />
      <Compile Include="Assets\NPC\Observer\AchievementManager.cs" />
      <Compile Include="Assets\NPC\Observer\ObsEnemyKill.cs" />
      <Compile Include="Assets\NPC\Observer\Observer.cs" />
@@ -87,15 +93,20 @@
      <Compile Include="Assets\NPC\Rin New 3d - Anime Style\Demo\Scripts\UIManager.cs" />
      <Compile Include="Assets\NPC\Script\InteractionObject.cs" />
      <Compile Include="Assets\NPC\Script\Npc.cs" />
-     <Compile Include="Assets\Player\Script\CoolTime.cs" />
-     <Compile Include="Assets\Player\Script\PlayerAnimation.cs" />
-     <Compile Include="Assets\Player\Script\PlayerAttack.cs" />
-     <Compile Include="Assets\Player\Script\PlayerInfo.cs" />
-     <Compile Include="Assets\Player\Script\PlayerInput.cs" />
-     <Compile Include="Assets\Player\Script\PlayerMovement.cs" />
-     <Compile Include="Assets\Player\Script\PlayerSkill.cs" />
-     <Compile Include="Assets\Player\SkillPrefabs\Skill_1.cs" />
-     <Compile Include="Assets\Player\SkillPrefabs\Skill_2.cs" />
+     <Compile Include="Assets\Player\Gauntlets\Script\GauntletsPlayerAnimation.cs" />
+     <Compile Include="Assets\Player\Gauntlets\Script\GauntletsPlayerAttack.cs" />
+     <Compile Include="Assets\Player\Gauntlets\Script\GauntletsPlayerInput.cs" />
+     <Compile Include="Assets\Player\Gauntlets\Script\GauntletsPlayerMovement.cs" />
+     <Compile Include="Assets\Player\Gauntlets\Script\GauntletsPlayerSkill.cs" />
+     <Compile Include="Assets\Player\Gauntlets\Script\PlayerInfo.cs" />
+     <Compile Include="Assets\Player\Sward\Script\CoolTime.cs" />
+     <Compile Include="Assets\Player\Sward\Script\PlayerAnimation.cs" />
+     <Compile Include="Assets\Player\Sward\Script\PlayerAttack.cs" />
+     <Compile Include="Assets\Player\Sward\Script\PlayerInput.cs" />
+     <Compile Include="Assets\Player\Sward\Script\PlayerMovement.cs" />
+     <Compile Include="Assets\Player\Sward\Script\PlayerSkill.cs" />
+     <Compile Include="Assets\Player\Sward\SkillPrefabs\Skill_1.cs" />
+     <Compile Include="Assets\Player\Sward\SkillPrefabs\Skill_2.cs" />
      <Compile Include="Assets\UI\SliderBar.cs" />
      <None Include="Assets\NPC\Rin New 3d - Anime Style\Advance Unlit Shader\Advance Unlit.shader" />
      <None Include="Assets\Fantasy Forest Environment Free Sample\StandardNoCulling.shader" />
@@ -103,7 +114,7 @@
      <None Include="Assets\NPC\Rin New 3d - Anime Style\ReadMe!.txt" />
      <None Include="Assets\Effect\Fantastic cartoon VFX\Readme.txt" />
      <None Include="Assets\Effect\Fantastic cartoon VFX\Shaders\Blend_Tornado2.shader" />
-     <None Include="Assets\Player\Model\readme.txt" />
+     <None Include="Assets\Player\Sward\Model\readme.txt" />
      <None Include="Assets\Effect\Fantastic cartoon VFX\Prefabs\ReadMe.txt" />
      <None Include="Assets\Effect\Fantastic cartoon VFX\Shaders\Tornado.shader" />
      <None Include="Assets\UI\SimplePixelUI\fonts\Font1\license.txt" />
@@ -653,37 +664,37 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/Users/조성민/Desktop/졸업작품/끝이아닌시작/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>D:/성민 자료/피땀눈물/3학년 2학기/졸업작품/끝이아닌시작/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>C:/Users/조성민/Desktop/졸업작품/끝이아닌시작/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>D:/성민 자료/피땀눈물/3학년 2학기/졸업작품/끝이아닌시작/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/조성민/Desktop/졸업작품/끝이아닌시작/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>D:/성민 자료/피땀눈물/3학년 2학기/졸업작품/끝이아닌시작/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/조성민/Desktop/졸업작품/끝이아닌시작/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/성민 자료/피땀눈물/3학년 2학기/졸업작품/끝이아닌시작/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>C:/Users/조성민/Desktop/졸업작품/끝이아닌시작/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>D:/성민 자료/피땀눈물/3학년 2학기/졸업작품/끝이아닌시작/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>C:/Users/조성민/Desktop/졸업작품/끝이아닌시작/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>D:/성민 자료/피땀눈물/3학년 2학기/졸업작품/끝이아닌시작/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Postprocessing.Editor">
- <HintPath>C:/Users/조성민/Desktop/졸업작품/끝이아닌시작/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+ <HintPath>D:/성민 자료/피땀눈물/3학년 2학기/졸업작품/끝이아닌시작/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/Users/조성민/Desktop/졸업작품/끝이아닌시작/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>D:/성민 자료/피땀눈물/3학년 2학기/졸업작품/끝이아닌시작/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Postprocessing.Runtime">
- <HintPath>C:/Users/조성민/Desktop/졸업작품/끝이아닌시작/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+ <HintPath>D:/성민 자료/피땀눈물/3학년 2학기/졸업작품/끝이아닌시작/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/조성민/Desktop/졸업작품/끝이아닌시작/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>D:/성민 자료/피땀눈물/3학년 2학기/졸업작품/끝이아닌시작/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/조성민/Desktop/졸업작품/끝이아닌시작/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>D:/성민 자료/피땀눈물/3학년 2학기/졸업작품/끝이아닌시작/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
