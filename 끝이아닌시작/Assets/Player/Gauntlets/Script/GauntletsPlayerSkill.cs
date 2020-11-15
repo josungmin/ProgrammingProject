@@ -73,7 +73,10 @@ public class GauntletsPlayerSkill : MonoBehaviour
     private IEnumerator CastSkill_W()
     {
         animator.SetBool("isSkillW", true);
-        yield return new WaitForSeconds(skillCoolTime[1]);
+        yield return new WaitForSeconds(1.5f);
+        Instantiate(skillPrefab[1], this.transform);
+
+        yield return new WaitForSeconds(skillCoolTime[1] - 1.5f);
         StopSkill_W();
     }
 
@@ -115,7 +118,10 @@ public class GauntletsPlayerSkill : MonoBehaviour
     private IEnumerator CastSkill_R()
     {
         animator.SetBool("isSkillR", true);
-        yield return new WaitForSeconds(skillCoolTime[3]);
+        yield return new WaitForSeconds(0.2f);
+        Instantiate(skillPrefab[3], this.transform);
+
+        yield return new WaitForSeconds(skillCoolTime[3] - 0.2f);
         StopSkill_R();
     }
 

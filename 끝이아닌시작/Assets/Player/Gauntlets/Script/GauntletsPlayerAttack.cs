@@ -8,6 +8,9 @@ public class GauntletsPlayerAttack : MonoBehaviour
     private GauntletsPlayerInput playerInput;
 
     [SerializeField]
+    private MainCamera camera;
+
+    [SerializeField]
     private float attack1_coolTime;
     [SerializeField]
     private float attack2_coolTime;
@@ -220,7 +223,10 @@ public class GauntletsPlayerAttack : MonoBehaviour
         if (playerInput.isAttack || playerInput.isSkillAttack)
         {
             if(playerInput._enemy.gameObject.tag == "Enemy")
+            {
                 playerInput._enemy.GetComponent<EnemyInfo>().TakeDamage(10);
+                camera.StartCoroutine(camera.Shake(0.3f, 0.5f)); //.Shake(1.0f, 1.0f));
+            }
         }
     }
 }

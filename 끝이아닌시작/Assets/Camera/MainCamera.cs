@@ -38,4 +38,17 @@ public class MainCamera : MonoBehaviour
 
         transform.position = Vector3.Lerp(transform.position, cameraPosition, followSpeed * Time.deltaTime);
     }
+
+    public IEnumerator Shake(float _amount, float _duration)
+    {
+        float timer = 0;
+        while (timer <= _duration)
+        {
+            this.transform.localPosition = (Vector3)Random.insideUnitCircle * _amount + this.transform.localPosition;
+
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        transform.localPosition = this.transform.localPosition;
+    }
 }
