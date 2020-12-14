@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf7c9d3a76ed2e468d3a0a88ca9e994, type: 3}
+  m_Name: Dialoggue 2
+  m_EditorClassIdentifier: 
+  sentences:
+  - "\uC6B0\uB9AC \uB9C8\uC744\uC5D0 \uC798 \uC654\uB124..."
+  - "\uC9C0\uAE08\uC740 \uC80A\uC740 \uC0AC\uB78C\uB4E4\uC774 \uB2E4 \uB5A0\uB098\uACE0
+    \uBA87\uBA87 \uB178\uC778\uBC16\uC5D0\n\uB0A8\uC9C0 \uC54A\uC558\uB2E4\uB124"
+  - "\uADF8\uB798\uB3C4 \uCC38 \uC544\uB984\uB2E4\uC6B4 \uB9C8\uC744\uC774\uC9C0
+    \uC54A\uB098?"
